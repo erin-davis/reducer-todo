@@ -7,8 +7,15 @@ const Todos = () =>{
   const [state, dispatch] = useReducer(simpleReducer, initialState);
 
   return (
-    <div className="todo-item">
-
+    <div>
+    {state.map(list =>{
+      return(
+        <div className="todo-item">
+          <h3>{list.item}</h3>
+          {list.completed ? (<p>Complete: Yes</p>) : (<p>Complete: No</p>)}
+        </div>
+      )
+    })}
     </div>
   )
 }
