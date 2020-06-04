@@ -13,5 +13,10 @@ export const initialState = [
 
 
 export const simpleReducer = (state, action) =>{
-  return state;
+  switch(action.type){
+    case "WRITE_TODO":
+      return {...state, item: action.payload, completed: false, id: new Date()};
+    default:
+      return state;
+  }
 }
