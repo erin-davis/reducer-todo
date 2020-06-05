@@ -5,7 +5,7 @@ export const initialState = [
       id: 3892987589
     },
     {
-      item: 'Figure out how to initialState',
+      item: 'Figure out how to do initialState',
       completed: false,
       id: 69696969696
     }
@@ -15,7 +15,9 @@ export const initialState = [
 export const simpleReducer = (state, action) =>{
   switch(action.type){
     case "WRITE_TODO":
-      return {...state, item: action.payload, completed: false, id: new Date()};
+      return {...state};
+    case "POST_TODO":
+      return {...state, item: action.payload, completed: false, id: new Date()}
     default:
       return state;
   }
